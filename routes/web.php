@@ -27,9 +27,9 @@ Route::get('/', HomeController::class);
 
 Route::controller(HistorialController::class)->group(function () {
     //Router que trabaja con un sub URL en el proyecto
-    Route::get('historial', 'index');
+    Route::get('historial', 'index')->name('historial.index');
     //Router que trabaja con un sub URL en otro URL
-    Route::get('historial/create', 'create');
+    Route::get('historial/create', 'create')->name('historial.create');
     //Router que trabaja con un sub URL y la pasa un parametro en el proyecto
-    Route::get('historial/{dia}', 'show');
+    Route::get('historial/{id}', 'show')->name('historial.show');
 });
